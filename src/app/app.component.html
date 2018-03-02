@@ -18,32 +18,19 @@
         <fieldset>
           <legend>Subscription Form:</legend>
 
-            <div class="form-group">
-              <label for="email">E-mail:</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                ngModel
-                name="email"
-                required
-                email
-                #email="ngModel">
-              <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Password:</label>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                ngModel
-                name="password"
-                required
-                #password="ngModel">
-              <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password!</span>
-            </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              ngModel
+              name="email"
+              required
+              email
+              #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+          </div>
 
           <div class="form-group">
             <label for="subscription">Subscription Type:</label>
@@ -53,8 +40,21 @@
               [ngModel]="defaultSubscriptionType"
               name="subscription">
               <option *ngFor="let subscription of subscriptions"
-                [value]="subscription">{{ subscription }}</option>
+                      [value]="subscription">{{ subscription }}</option>
             </select>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Password:</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              ngModel
+              name="password"
+              required
+              #password="ngModel">
+            <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password!</span>
           </div>
 
           <button

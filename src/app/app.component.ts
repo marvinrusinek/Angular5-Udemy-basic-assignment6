@@ -12,8 +12,8 @@ export class AppComponent {
   defaultSubscriptionType = 'Advanced';
   subscriptionObj = {
     email: '',
-    password: '',
-    subscription: ''
+    subscription: '',
+    password: ''
   };
   submittedForm = false;
 
@@ -21,7 +21,7 @@ export class AppComponent {
     console.log(this.subscriptionForm);
     this.submittedForm = true;
     this.subscriptionObj.email = this.subscriptionForm.value.email;
-    this.subscriptionObj.password = this.subscriptionForm.value.password;
     this.subscriptionObj.subscription = this.subscriptionForm.value.subscription;
+    this.subscriptionObj.password = this.subscriptionForm.value.password;
   }
 }
