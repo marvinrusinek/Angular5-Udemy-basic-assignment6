@@ -14,7 +14,7 @@
            Optionally, display it in your template.
       -->
 
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <form (ngSubmit)="onSubmit(subscriptionForm)" #subscriptionForm="ngForm">
         <fieldset>
           <legend>Subscription Form:</legend>
 
@@ -54,15 +54,15 @@
               name="password"
               required
               #password="ngModel">
-            <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password!</span>
+            <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a valid password!</span>
           </div>
+
+          <p *ngIf="!subscriptionForm.valid && subscriptionForm.touched" [ngClass]="'invalidFormMessage'">The form is invalid!</p>
 
           <button
             class="btn btn-primary btn-outline"
             type="submit"
-            [disabled]="!f.valid">Submit</button>
-
-          <p *ngIf="!f.valid && f.touched" [ngClass]="'invalidFormMessage'">The form is invalid.</p>
+            [disabled]="!subscriptionForm.valid">Submit</button>
         </fieldset>
       </form>
     </div>

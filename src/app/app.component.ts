@@ -7,7 +7,7 @@ import { NgForm, NgModelGroup } from "@angular/forms";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('f') subscriptionForm: NgForm;
+  @ViewChild('subscriptionForm') subscriptionForm: NgForm;
   subscriptions = ['Basic', 'Advanced', 'Pro'];
   defaultSubscriptionType = 'Advanced';
   subscriptionObj = {
