@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm, NgModelGroup } from "@angular/forms";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -17,8 +17,8 @@ export class AppComponent {
   };
   submittedForm = false;
 
-  onSubmit(form: NgForm) {
-    console.log(this.subscriptionForm);
+  onSubmit() {
+    console.log(this.subscriptionForm.value);
     this.submittedForm = true;
     this.subscriptionObj.email = this.subscriptionForm.value.email;
     this.subscriptionObj.subscription = this.subscriptionForm.value.subscription;
