@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm, NgModelGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,8 @@ import { NgForm } from "@angular/forms";
 })
 export class AppComponent {
   @ViewChild('f') subscriptionForm: NgForm;
-  defaultSubscriptionType = 'advanced';
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSubscriptionType = 'Advanced';
   subscriptionObj = {
     email: '',
     password: '',
@@ -19,7 +20,6 @@ export class AppComponent {
   onSubmit(form: NgForm) {
     console.log(this.subscriptionForm);
     this.submittedForm = true;
-    
     this.subscriptionObj.email = this.subscriptionForm.value.email;
     this.subscriptionObj.password = this.subscriptionForm.value.password;
     this.subscriptionObj.subscription = this.subscriptionForm.value.subscription;

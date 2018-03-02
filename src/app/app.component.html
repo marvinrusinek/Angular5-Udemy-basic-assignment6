@@ -46,15 +46,14 @@
             </div>
 
           <div class="form-group">
-            <label for="subscriptions">Subscription Type:</label>
+            <label for="subscription">Subscription Type:</label>
             <select
-              id="subscriptions"
+              id="subscription"
               class="form-control"
               [ngModel]="defaultSubscriptionType"
               name="subscription">
-              <option value="basic">Basic</option>
-              <option value="advanced">Advanced</option>
-              <option value="pro">Pro</option>
+              <option *ngFor="let subscription of subscriptions"
+                [value]="subscription">{{ subscription }}</option>
             </select>
           </div>
 
